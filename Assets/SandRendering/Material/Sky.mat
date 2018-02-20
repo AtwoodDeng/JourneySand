@@ -73,6 +73,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorGround: {r: 1, g: 0.82941175, b: 0.5735294, a: 1}
-    - _ColorSky: {r: 1, g: 0.6615619, b: 0.47794116, a: 1}
+    - _ColorGround: {r: 0.9191176, g: 0.8245025, b: 0.68258, a: 1}
+    - _ColorSky: {r: 0.875, g: 0.6789681, b: 0.5726103, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

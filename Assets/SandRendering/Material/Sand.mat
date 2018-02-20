@@ -19,8 +19,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DetailBumpMap:
-        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
-        m_Scale: {x: 15, y: 15}
+        m_Texture: {fileID: 2800000, guid: 9b6e7302192325b4090f5c4aaab1ffda, type: 3}
+        m_Scale: {x: 30, y: 30}
         m_Offset: {x: 0, y: 0}
     - _FogColorTex:
         m_Texture: {fileID: 0}
@@ -55,24 +55,24 @@ Material:
         m_Scale: {x: 12, y: 12}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0b93f59a8fa10ce47b626e490ce242df, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 0.4
-    - _DetailBumpScale: 0.25
+    - _DetailBumpScale: 0.5
     - _GlitterMutiplyer: 80
-    - _GlitterRange: 4.01
+    - _GlitterRange: 0.78
     - _Glitterness: 5
-    - _Glossiness: 6.25
-    - _OceanSpecularMutiplyer: 10
-    - _OceanSpecularShiness: 6.28
+    - _Glossiness: 7.3
+    - _OceanSpecularMutiplyer: 1.01
+    - _OceanSpecularShiness: 0.33
     - _Roughness: 0.545
     - _ShallowBumpScale: 0.5
     - _SpecularAngle: -2.33
     - _SpecularMutiplyer: 0.6
     - _SpecularShiness: 5.98
-    - _SteepBumpScale: 0.2
+    - _SteepBumpScale: 0.08
     m_Colors:
     - _GlitterColor: {r: 1, g: 0.85446244, b: 0.6985294, a: 1}
     - _SpecularColor: {r: 1, g: 0.90415823, b: 0.8014706, a: 1}

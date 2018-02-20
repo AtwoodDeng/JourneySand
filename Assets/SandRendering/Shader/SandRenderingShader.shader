@@ -232,6 +232,50 @@ Shader "Sand/SandRenderingShader"
 			    return 1.0 / (3.1415926535 * X*Y * pow( pow(HdotX/X , 2) + pow(HdotY/Y , 2) + NdotH*NdotH , 2 ) );
 			}
 
+			float BeckmanGeometricShadowingFunction (float3 light, float3 view , float3 normal, float roughness){
+			
+				float NdotL = max( 0 , dot( normal , light));
+				float NdotV = max( 0 , dot( normal , view));
+			    float roughnessSqr = roughness*roughness;
+			    float NdotLSqr = NdotL*NdotL;
+			    float NdotVSqr = NdotV*NdotV;
+
+
+			    float calulationL = (NdotL)/(roughnessSqr * sqrt(1- NdotLSqr));
+			    float calulationV = (NdotV)/(roughnessSqr * sqrt(1- NdotVSqr));
+
+
+			    float SmithL = calulationL < 1.6 ? (((3.535 * calulationL)
+			 + (2.181 * calulationL * calulationL))/(1 + (2.276 * calulationL) + 
+			(2.577 * calulationL * calulationL))) : 1.0;
+			    float SmithV = calulationV < 1.6 ? (((3.535 * calulationV) 
+			+ (2.181 * calulationV * calulationV))/(1 + (2.276 * calulationV) +
+			 (2.577 * calulationV * calulationV))) : 1.0;
+
+
+				float Gs =  (SmithL * SmithV);
+				return Gs;
+			}
+
+			float GGXGeometricShadowingFunction (float3 light, float3 view , float3 normal, float roughness){
+
+				float NdotL = max( 0 , dot( normal , light));
+				float NdotV = max( 0 , dot( normal , view));
+			    float roughnessSqr = roughness*roughness;
+			    float NdotLSqr = NdotL*NdotL;
+			    float NdotVSqr = NdotV*NdotV;
+
+
+			    float SmithL = (2 * NdotL)/ (NdotL + sqrt(roughnessSqr +
+			 ( 1-roughnessSqr) * NdotLSqr));
+			    float SmithV = (2 * NdotV)/ (NdotV + sqrt(roughnessSqr + 
+			( 1-roughnessSqr) * NdotVSqr));
+
+
+				float Gs =  (SmithL * SmithV);
+				return Gs;
+			}
+
 			float MySpecularDistribution( float roughness, float3 lightDir , float3 view , float3 normal , float3 normalDetail )
 			{
 //				float base = exp( 1 - NdotL * ( 1 - NdotL ) * roughness  ) * exp(1 - NdotH * NdotH * roughness );
@@ -248,8 +292,8 @@ Shader "Sand/SandRenderingShader"
 
 //				float shine = pow( max ( 0 , - dot( reflect( lightDir , normalDetail ) , view ) ) , roughness); 
 //				float  shine = GGXNormalDistributionModify( roughness , saturate( dot( halfDirection , normalize( lerp( normalDetail , normal , 0.1 ) ) ) ) ) ;
-				float shine = pow( dot( halfDirection , normalize( lerp( normalDetail , normal , 0.1 ) ) ) , 10 / roughness );
-
+				float shine = pow( dot( halfDirection , normalize( lerp( normalDetail , normal , 0.1 ) ) ) , 10 / roughness )  ;
+//				return shine;
 
 				return baseShine * shine;
 			}
@@ -258,7 +302,8 @@ Shader "Sand/SandRenderingShader"
 			{
 				float3 halfDirection = normalize( view + lightDir);
 //				float specBase = saturate( dot ( lightDir  , normal )  ) * saturate( 1 - dot( halfDirection , normal ) );
-				float specBase = saturate( 1 - dot( normal , view ) * 10 );
+				float specBase = saturate( 1 - dot( normal , view ) * 2 );
+
 				float specPow = pow( specBase , 1 / _GlitterRange );
 
 //				return  pow( specBase , _GlitterRange );
@@ -293,8 +338,10 @@ Shader "Sand/SandRenderingShader"
 			    return x2*x2*x;
 			}
 
-			float3 FresnelFunction(float3 SpecularColor,float LdotH){
-			    return SpecularColor + (1 - SpecularColor)* SchlickFresnel(LdotH);
+			float4 FresnelFunction(float3 SpecularColor,float light , float viewDirection ){
+				float3 halfDirection = normalize( light + viewDirection);
+				float LdotH = max( 0 , dot ( light , halfDirection ));
+			    return float4( SpecularColor + (1 - SpecularColor)* SchlickFresnel(LdotH) , 1 );
 			}
 
 			float sampleDepth( float4 uv ) {
@@ -342,7 +389,8 @@ Shader "Sand/SandRenderingShader"
 				float3 viewDirection = normalize( i.view );
 				float3 halfDirection = normalize( viewDirection + lightDirection);
 				float3 detail =  GetDetailNormal( i.uv );
-				 detail = normalize ( i.tangentDir * detail.x + i.normal * detail.y + i.bitangentDir * detail.z);
+				 detail = normalize ( i.tangentDir * detail.x + i.normal * detail.z + i.bitangentDir * detail.y);
+
 				float3 normalDetail = normalize( detail * _DetailBumpScale + normal );
 
 				float4 ambientCol = unity_AmbientSky;
@@ -351,7 +399,7 @@ Shader "Sand/SandRenderingShader"
 
 //				return fixed4( dot( lightDirection , normal ) , 0 , 0 , 1 );
 				// add all diffuse color
-				float4 diffuseCol =  lightColor * mainColor * ( OrenNayarDiffuse( lightDirection , viewDirection , normal , _Roughness) );
+				float4 diffuseCol =  lightColor * mainColor * ( OrenNayarDiffuse( lightDirection , viewDirection , normal , _Roughness) ) ;
 
 				for ( int k = 1 ; k < 4 ; ++k ) {
 					float4 lightColor2 = unity_LightColor[k];
@@ -371,8 +419,11 @@ Shader "Sand/SandRenderingShader"
 //				float4 specularColor = _SpecularColor * TrowbridgeReitzNormalDistribution(_SpecularShiness, NdotH);
 //				float4 specularColor = _SpecularColor * PhongNormalDistribution( RdotV , _SpecularShiness , _SpecularShiness * 40 );
 //				float4 specularColor = _SpecularColor * BeckmannNormalDistribution(_SpecularShiness , NdotH ) ;
-				float4 oceanSpecularColor = lightColor * _SpecularColor * MySpecularDistribution ( _OceanSpecularShiness 
-				, lightDirection , viewDirection , i.normal , detail );
+				float4 oceanSpecularColor = lightColor * _SpecularColor * 
+				MySpecularDistribution ( _OceanSpecularShiness , lightDirection , viewDirection , i.normal , detail )
+				* GGXGeometricShadowingFunction( lightDirection , viewDirection , normalDetail , _Roughness )
+				* FresnelFunction( _SpecularColor , lightDirection , viewDirection)
+				 / abs( 4 * dot( normalDetail , lightDirection ) * dot( normalDetail , viewDirection));
 
 				float4 specularColor =  lightColor * _SpecularColor * BeckmannNormalDistribution( _SpecularShiness , saturate( dot( halfDirection , normalDetail ) ) ) ;
 
@@ -381,8 +432,11 @@ Shader "Sand/SandRenderingShader"
 					float3 lightDirection2 = unity_LightPosition[k].xyz - i.worldPos * unity_LightPosition[k].w;
 					if ( lightColor2.x * lightColor2.y * lightColor2.z >0 )
 					{
-						float4 specularColor2 =  lightColor2 * _SpecularColor * GGXNormalDistribution( _SpecularShiness , saturate( dot( halfDirection , normalDetail ) ) );
-						specularColor += specularColor2;
+						float4 specularColor2 =  lightColor2 * _SpecularColor * GGXNormalDistribution( _SpecularShiness , saturate( dot( halfDirection , normalDetail ) ) ) 
+						* GGXGeometricShadowingFunction( lightDirection2 , viewDirection , normalDetail , _Roughness)
+						* FresnelFunction( _SpecularColor , lightDirection2 , viewDirection)
+						/ abs( 4 * dot( normalDetail , lightDirection2 ) * dot( normalDetail , viewDirection));
+						specularColor += specularColor2 ;
 					}
 				}
 
@@ -393,12 +447,10 @@ Shader "Sand/SandRenderingShader"
 //					_SpecularShiness , i.normal , normalDetail , halfDirection , i.tangentDir , i.bitangentDir );
 
 
-				specularColor *= float4 ( FresnelFunction( _SpecularColor.xyz , LdotH ).xyz , 1) ;
+//				specularColor *= float4 ( FresnelFunction( _SpecularColor.xyz , LdotH ).xyz , 1);
 
 				float4 gliterColor =  _GlitterMutiplyer * _GlitterColor * GliterDistribution( _Glitterness ,
 				 lightDirection , normalDetail , viewDirection , i.uv , i.worldPos );
-
-//				 return gliterColor;
 
 				float4 col = diffuseCol + specularColor + ambientCol + gliterColor;
 
