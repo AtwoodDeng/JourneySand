@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sand
+  m_Shader: {fileID: 4800000, guid: d9f446591c0101d4e8281b97d5caf1bf, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DetailBumpMap:
+        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
+        m_Scale: {x: 15, y: 15}
+        m_Offset: {x: 0, y: 0}
+    - _FogColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GlitterTex:
+        m_Texture: {fileID: 2800000, guid: 5a8d180492253e34d9a7bdf8eb712d81, type: 3}
+        m_Scale: {x: 20, y: 20}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapShallow:
+        m_Texture: {fileID: 2800000, guid: 40cadf352f43d25418f21cb29403827c, type: 3}
+        m_Scale: {x: 20, y: 20}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapShallowX:
+        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapShallowZ:
+        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapSteep:
+        m_Texture: {fileID: 2800000, guid: 05a6e2510ec1d7b4ba9167c94a05642f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapSteepX:
+        m_Texture: {fileID: 2800000, guid: 5484b7debfbf23446864b1c3d0385de2, type: 3}
+        m_Scale: {x: 12, y: 12}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMapSteepZ:
+        m_Texture: {fileID: 2800000, guid: 66e21e8b2000a3f4f8bee4e08472cd0a, type: 3}
+        m_Scale: {x: 12, y: 12}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0b93f59a8fa10ce47b626e490ce242df, type: 3}
+        m_Scale: {x: 100, y: 100}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 0.4
+    - _DetailBumpScale: 0.25
+    - _GlitterMutiplyer: 80
+    - _GlitterRange: 4.01
+    - _Glitterness: 5
+    - _Glossiness: 6.25
+    - _OceanSpecularMutiplyer: 10
+    - _OceanSpecularShiness: 6.28
+    - _Roughness: 0.545
+    - _ShallowBumpScale: 0.5
+    - _SpecularAngle: -2.33
+    - _SpecularMutiplyer: 0.6
+    - _SpecularShiness: 5.98
+    - _SteepBumpScale: 0.2
+    m_Colors:
+    - _GlitterColor: {r: 1, g: 0.85446244, b: 0.6985294, a: 1}
+    - _SpecularColor: {r: 1, g: 0.90415823, b: 0.8014706, a: 1}

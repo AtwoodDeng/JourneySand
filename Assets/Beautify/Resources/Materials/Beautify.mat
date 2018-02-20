@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Beautify
+  m_Shader: {fileID: 4800000, guid: 1cb716be5dc9d4230ada327d9468ff41, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Downsampled:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FogOfWar:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 2800000, guid: 4e4a0e2a9212f4a1b8ce9108443f3b03, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 9733f0d7aec8848f08cae3c95b44d3ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Brightness: 1.1
+    - _BumpScale: 1
+    - _Contrast: 1.38
+    - _Cutoff: 0.5
+    - _DepthThreshold: 0.0005
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Exposure: 1.37
+    - _FogAlpha: 1
+    - _FogBaseHeight: 0
+    - _FogDensity: 1
+    - _FogDistance: 0
+    - _FogDistanceFallOff: 0.001
+    - _FogFallOff: 0.908
+    - _FogHeight: 1
+    - _FogHeightFallOff: 0.36
+    - _FogIntensity: 1
+    - _FogNoise: 0.34
+    - _FogPointLightRadius0: 5
+    - _FogPointLightRadius1: 5
+    - _FogPointLightRadius2: 5
+    - _FogPointLightRadius3: 5
+    - _FogPointLightRadius4: 5
+    - _FogPointLightRadius5: 5
+    - _FogScale: 1
+    - _FogSkyAlpha: 0.8
+    - _FogSkyHaze: 50
+    - _FogSkyNoise: 0
+    - _FogSkySpeed: 0.3
+    - _FogSpeed: 0
+    - _FogStepping: 0.0833333
+    - _FogSteppingNear: 1
+    - _FogTurbulence: 0
+    - _Glossiness: 0.5
+    - _Intensity: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Saturate: 0.08
+    - _Sharpen: 2.5
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorBoost: {r: 1.1, g: 1.1, b: 0.08, a: 1}
+    - _Dither: {r: 5, g: 0, b: 0.022, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FogColor: {r: 0.8161765, g: 0.7321583, b: 0.7321583, a: 1}
+    - _FogDistance: {r: 0, g: 1, b: 1000, a: 1}
+    - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
+    - _FogOfWarSize: {r: 1, g: 1, b: 1, a: 1}
+    - _FogPointLightColor0: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightColor1: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightColor2: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightColor3: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightColor4: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightColor5: {r: 1, g: 1, b: 0, a: 1}
+    - _FogPointLightPosition0: {r: 0, g: 0, b: 0, a: 1}
+    - _FogPointLightPosition1: {r: 0, g: 0, b: 0, a: 1}
+    - _FogPointLightPosition2: {r: 0, g: 0, b: 0, a: 1}
+    - _FogPointLightPosition3: {r: 0, g: 0, b: 0, a: 1}
+    - _FogPointLightPosition4: {r: 0, g: 0, b: 0, a: 1}
+    - _FogPointLightPosition5: {r: 0, g: 0, b: 0, a: 1}
+    - _FogSkyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _FogVoidData: {r: 0, g: 0, b: 0, a: 1}
+    - _FogVoidPosition: {r: 0, g: 0, b: 0, a: 1}
+    - _FogWindDir: {r: 1, g: 0, b: 0, a: 1}
+    - _Sharpen: {r: 2.5, g: 0.035, b: 0.5, a: 1}

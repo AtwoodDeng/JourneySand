@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 31a71ace18c56467dad9a9a3aaf7875a
+labels:
+- Effect
+- Shader
+- Tonemapping
+- Sharpen
+- Colorblind
+- Color
+- Dither
+folderAsset: yes
+timeCreated: 1462519607
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
