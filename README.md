@@ -1,2 +1,4 @@
-# JourneySand
-An experimental Project to render sand in Journey's style
+# Journey Sand
+A Unity project to remake the scene in Journey.
+
+![Screenshot](Images/Title2)
