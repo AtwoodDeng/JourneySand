@@ -39,7 +39,7 @@ The overall effect :
 
 ## Specular
 
-I'm using a basic Blinn model in the specular effect.
+Well, simply, it is Bilnn-Phong model. I also tried the PBR but there is just a very vague improvement.
 
 ![Screenshot](Images/Specular.jpg)
 
