@@ -13,15 +13,11 @@ The reference scene from Journey :
 
 (Image Source: GDC Vault 2012 - https://www.gdcvault.com/play/1017742/Sand-Rendering-in)
 
-******
-
 ## Diffuse
 
 A modified Oren Nayar model is used here:
 
 ![Screenshot](Images/Diffuse.jpg)
-
-******
 
 ## Height map(Normal map)
 
@@ -41,15 +37,11 @@ The overall effect :
 
 ![Screenshot](Images/Normal.jpg)
 
-******
-
 ## Specular
 
 I'm using a basic Blinn model in the specular effect.
 
 ![Screenshot](Images/Specular.jpg)
-
-******
 
 ## Glitter
 
@@ -78,6 +70,8 @@ Add Tone map and LUT :(Post Processing Stack)
 Add Sharpen and saturation : (Beautify https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/beautify-61730)
 
 ![Screenshot](Images/Post4.jpg)
+
+******
 
 ## License
 
