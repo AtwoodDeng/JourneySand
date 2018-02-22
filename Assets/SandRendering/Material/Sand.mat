@@ -20,7 +20,7 @@ Material:
     m_TexEnvs:
     - _DetailBumpMap:
         m_Texture: {fileID: 2800000, guid: 9b6e7302192325b4090f5c4aaab1ffda, type: 3}
-        m_Scale: {x: 30, y: 30}
+        m_Scale: {x: 35, y: 35}
         m_Offset: {x: 0, y: 0}
     - _FogColorTex:
         m_Texture: {fileID: 0}
@@ -28,7 +28,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _GlitterTex:
         m_Texture: {fileID: 2800000, guid: 5a8d180492253e34d9a7bdf8eb712d81, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Scale: {x: 25, y: 25}
         m_Offset: {x: 0, y: 0}
     - _HeightMapShallow:
         m_Texture: {fileID: 2800000, guid: 40cadf352f43d25418f21cb29403827c, type: 3}
@@ -58,21 +58,55 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
+    - _NormalMapShallowX:
+        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMapShallowZ:
+        m_Texture: {fileID: 2800000, guid: ec3c693b04be8234e8e16007bcd8c943, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMapSteepX:
+        m_Texture: {fileID: 2800000, guid: 5484b7debfbf23446864b1c3d0385de2, type: 3}
+        m_Scale: {x: 12, y: 12}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMapSteepZ:
+        m_Texture: {fileID: 2800000, guid: 66e21e8b2000a3f4f8bee4e08472cd0a, type: 3}
+        m_Scale: {x: 12, y: 12}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 0.4
     - _DetailBumpScale: 0.5
-    - _GlitterMutiplyer: 80
-    - _GlitterRange: 0.78
-    - _Glitterness: 5
-    - _Glossiness: 7.3
-    - _OceanSpecularMutiplyer: 1.01
-    - _OceanSpecularShiness: 0.33
-    - _Roughness: 0.545
+    - _GlitterMutiplyer: 100
+    - _GlitterRange: 2
+    - _GlitterShiness: 1
+    - _Glitterness: 6
+    - _Glossiness: 4
+    - _IsDetailNormal: 0
+    - _IsDiffuse: 0
+    - _IsGlitter: 0
+    - _IsGlitterBase: 0
+    - _IsGlitterNoise: 0
+    - _IsGlitterSurface: 0
+    - _IsNormal: 0
+    - _IsNormalSteep: 0
+    - _IsNormalXZ: 0
+    - _IsOceanSpecular: 0
+    - _IsOceanSpecularBase: 0
+    - _IsOceanSpecularDetail: 0
+    - _IsPureDiffuse: 0
+    - _IsSmoothSurface: 0
+    - _IsSpecular: 0
+    - _OceanSpecularMutiplyer: 1.25
+    - _OceanSpecularShiness: 0.08
+    - _Roughness: 0.5
     - _ShallowBumpScale: 0.5
     - _SpecularAngle: -2.33
-    - _SpecularMutiplyer: 0.6
-    - _SpecularShiness: 5.98
+    - _SpecularMutiplyer: 0.15
+    - _SpecularShiness: 1.51
     - _SteepBumpScale: 0.08
+    - _SurfaceNormalScale: 0.1
     m_Colors:
     - _GlitterColor: {r: 1, g: 0.85446244, b: 0.6985294, a: 1}
-    - _SpecularColor: {r: 1, g: 0.90415823, b: 0.8014706, a: 1}
+    - _OceanSpecularColor: {r: 1, g: 0.90415823, b: 0.8014706, a: 1}
+    - _SpecularColor: {r: 1, g: 0.9894069, b: 0.9544226, a: 1}

@@ -58,7 +58,7 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				fixed4 col = lerp( _ColorGround , _ColorSky , saturate( i.worldPos.y / 30 ));
+				fixed4 col = lerp( _ColorGround , _ColorSky , saturate( i.worldPos.y / 50 ));
 				// sample the texture
 //				fixed4 col = tex2D(_MainTex, i.uv);
 				// apply fog
