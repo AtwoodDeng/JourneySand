@@ -15,7 +15,7 @@ The reference scene from Journey :
 
 ## Diffuse
 
-A modified Oren Nayar model is used here:
+A modified Oren Nayar model is implemented :
 
 ![Screenshot](Images/Diffuse.jpg)
 
@@ -45,7 +45,7 @@ I'm using a basic Blinn model in the specular effect.
 
 ## Glitter
 
-Not 100% sure about the noise function. Here is a fake effect to simulate the one in Journey.
+Not 100% sure what the noise function is uesd. Here is a fake effect to simulate the one in Journey.
 
 ![Screenshot](Images/Glitter.jpg)
 
